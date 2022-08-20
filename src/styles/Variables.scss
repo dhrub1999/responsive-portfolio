@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+$ffPrimary: "Open Sans", Arial, Helvetica, sans serif;
+$ffSpecial: "Kalam", cursive;
+
+$fsHeadlines: 2.4rem;
+$fsParagraphs: 1.4rem;
+$fsSubheadlines: 1.8rem;
+$fsButton: 1.2rem;
+
+$tmContainer: 8em;
+$tmContent: 4em;
+$tmSubheadlines: 2em;
+$tmParagraphs: 1em;
+$tmButton: 2em;
+
+$dominantPurple: #7002FD;
+$whiteAlmost: #FEF7FF;
+$black: #1F1926;
+$pinkish: #9E88B2;
+
+$transition: all .3s ease-in;
+
+@mixin headlines {
+    font-family: $ffPrimary;
+    font-weight: 700;
+    font-size: $fsHeadlines;
+    color: $dominantPurple;
+}
+
+@mixin subHeadlines {
+    font-family: $ffPrimary;
+    font-weight: 600;
+    font-size: $fsSubheadlines;
+    color: $pinkish;
+}
+
+@mixin paragraphs {
+    font-family: $ffPrimary;
+    font-weight: 400;
+    font-size: $fsParagraphs;
+    color: $black;
+    letter-spacing: 1px;
+}
+
+@mixin flexbox-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+@mixin flexbox-col {
+    @include flexbox-row();
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin abs-pos {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@mixin after-before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    @include abs-pos();
+}
+
+@mixin buttons {
+    outline: none;
+    border: 1px solid transparent;
+    height: 3.5rem;
+    width: 12rem;
+    border-radius: 5px;
+    background: $dominantPurple;
+    color: $whiteAlmost;
+    font-family: $ffSpecial;
+    font-size: $fsButton;
+    font-weight: 700;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, .1);
+    transition: .5s ease all;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $dominantPurple;
+        background: transparent;
+        color: $dominantPurple;
+    }
+}
+
+@mixin default-background-prop {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

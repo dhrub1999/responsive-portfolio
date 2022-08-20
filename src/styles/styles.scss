@@ -1,0 +1,765 @@
+@import "../styles/Variables.scss";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 64.5%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: $ffPrimary;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  font-display: auto;
+  overflow-x: hidden;
+}
+
+.landing-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9;
+    max-height: 100vh;
+
+    .wave-background {
+      height: 100vh;
+      width: auto;
+      z-index: -3;
+    }
+
+    .wave-background-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      fill: rgba(0, 0, 0, 0.8);
+      z-index: -2;
+    }
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    transition: $transition;
+    .content-container {
+      width: 100%;
+      .padding-container {
+        padding: 0 2em;
+        width: 100%;
+        height: 7vh;
+        @include flexbox-row;
+        justify-content: space-between;
+
+        .logo-container {
+          .logo-name a {
+            text-decoration: none;
+            color: $dominantPurple;
+            font-family: $ffSpecial;
+            font-size: $fsParagraphs;
+            transition: $transition;
+            line-height: 7vh;
+          }
+        }
+
+        nav {
+          ul {
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include flexbox-row;
+            justify-content: flex-start;
+            padding: 0 2em;
+            gap: 1em;
+            background: rgba(0, 0, 0, 0.8);
+            // border-radius: 4vh 0 0 4vh;
+            height: 7vh;
+            width: 100%;
+            box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+            transform: translateX(-1000px);
+            transition: $transition;
+
+            li {
+              a {
+                display: block;
+                color: $whiteAlmost;
+                transition: $transition;
+                padding: 0.3em 0.5em;
+
+                &:hover {
+                  color: $pinkish;
+                }
+              }
+
+              &:nth-child(3) a {
+                color: $pinkish;
+
+                &:hover {
+                  color: $dominantPurple;
+                }
+              }
+            }
+          }
+        }
+
+        .show-nav {
+          ul {
+            transform: translateX(0px);
+          }
+        }
+
+        .hamburger-container {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          justify-content: flex-end;
+          align-items: flex-end;
+          cursor: pointer;
+
+          div {
+            height: 2px;
+            width: 30px;
+            background: $whiteAlmost;
+            border-radius: 50%;
+            transition: $transition;
+          }
+
+          .second {
+            width: 20px;
+          }
+        }
+
+        .cross {
+          .first {
+            width: 20px;
+            transform: rotate(45deg) translate(3px, 2px);
+          }
+
+          .second {
+            transform: rotate(-45deg) translate(3px, -2px);
+          }
+        }
+      }
+    }
+  }
+
+  .sticky-nav {
+    position: fixed;
+    background: $pinkish;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+}
+
+.hero-container {
+  display: flex;
+
+  .content-container {
+    height: calc(100vh - 7vh);
+    width: 100%;
+
+    .padding-container {
+      padding: 0 2em;
+      display: flex;
+      height: calc(100vh - 7vh);
+      align-items: center;
+      justify-content: center;
+
+      .left-container {
+        .text-container {
+          .title {
+            h1 {
+              font-family: $ffPrimary;
+              font-size: 4rem;
+              line-height: 5.6rem;
+              text-align: center;
+              color: $whiteAlmost;
+              font-weight: 800;
+
+              .special {
+                color: $dominantPurple;
+                text-transform: capitalize;
+              }
+            }
+          }
+
+          .subtitle {
+            margin-top: 2rem;
+
+            p {
+              text-align: center;
+              font-size: $fsParagraphs;
+              color: $pinkish;
+            }
+          }
+        }
+
+        .button-container {
+          margin-top: 4rem;
+          text-align: center;
+
+          button {
+            @include buttons;
+            background: $whiteAlmost;
+            border-radius: 30px;
+
+            &:hover {
+              border: 1px solid transparent;
+              border-right: 1px solid $whiteAlmost;
+              border-left: 1px solid $whiteAlmost;
+              box-shadow: -2px 2px 8px rgba(0, 0, 1, 0.3);
+            }
+            a {
+              color: $dominantPurple;
+              transition: $transition;
+            }
+
+            &:hover a {
+              color: $whiteAlmost;
+            }
+          }
+        }
+      }
+
+      .right-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: -2;
+
+        .char-svg-container {
+          position: relative;
+          height: 100%;
+          width: 100vw;
+          display: grid;
+          place-content: center;
+          .char-svg {
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+            // height: clamp(220px, 60%, 420px);
+            width: 100%;
+            height: 250px;
+          }
+        }
+
+        .overlay-svg-container {
+          position: absolute;
+          top: 0;
+          height: 100vh;
+          left: 0;
+
+          .overlay-svg {
+            fill: rgba(0, 0, 0, 0.8);
+            width: auto;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.my-works {
+  margin-top: $tmContainer;
+
+  .content-container .padding-container {
+    padding: 0 2em;
+
+    .headline {
+      position: relative;
+
+      h2 {
+        text-align: center;
+        font-size: $fsHeadlines;
+        color: $dominantPurple;
+
+        &::before {
+          content: "CASE STUDIES";
+          position: absolute;
+          width: 100%;
+          text-align: center;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -59%);
+          z-index: -1;
+          font-size: 3rem;
+          color: rgba(255, 192, 203, 0.2);
+          font-family: $ffSpecial;
+          height: 100%;
+        }
+      }
+    }
+
+    .project-container {
+      .project {
+        @include flexbox-col;
+        width: 100%;
+
+        .project-img {
+          margin-top: $tmContent;
+
+          .project-background-img {
+            width: 100%;
+            max-width: 570px;
+            background: $pinkish;
+            padding: 1em 1em;
+            display: grid;
+            place-content: center;
+            box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 0.6rem;
+
+            img {
+              box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+              border-radius: 0.5rem;
+            }
+          }
+        }
+
+        .project-info {
+          margin-top: $tmSubheadlines;
+
+          .text-container {
+            text-align: center;
+
+            .project-title h3 {
+              color: $pinkish;
+              font-size: $fsSubheadlines;
+            }
+
+            .project-subtitle {
+              margin-top: $tmParagraphs;
+
+              p {
+                @include paragraphs;
+                line-height: 24px;
+              }
+            }
+
+            .button {
+              margin-top: $tmButton;
+
+              button {
+                @include buttons;
+                height: 3rem;
+                width: 10rem;
+                font-size: 1rem;
+
+                &:hover a {
+                  color: $dominantPurple;
+                }
+
+                a {
+                  color: $whiteAlmost;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.experiments {
+  margin-top: $tmContainer;
+
+  .content-container {
+    .padding-container {
+      padding: 0 2em;
+
+      .headline h2 {
+        text-align: center;
+        font-family: $ffSpecial;
+        font-size: 2rem;
+        color: $pinkish;
+      }
+
+      .experiment-projects-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        .experiment {
+          margin-top: $tmContent;
+
+          .card {
+            height: 110vw;
+            max-height: 420px;
+            width: auto;
+            max-width: 300px;
+            background: $black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 0.5rem;
+            box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+              background: #1f1926d1;
+            }
+
+            &:hover h3 {
+              color: $black;
+            }
+
+            div {
+              height: 60vw;
+              width: 60vw;
+              max-width: 250px;
+              max-height: 250px;
+              border-radius: 50%;
+              box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+              //   border: 2px solid transparent;
+            }
+
+            .img-rpg {
+              background: url("../img/Codepen\ Project\ 3.png");
+              @include default-background-prop;
+            }
+
+            .img-rbg {
+              background: url("../img/Codepen\ Project\ 4.png");
+              @include default-background-prop;
+            }
+
+            .img-nrc {
+              background: url("../img/Codepen\ Project\ 1.png");
+              @include default-background-prop;
+            }
+
+            .img-pc {
+              background: url("../img/Codepen\ Project\ 2.png");
+              @include default-background-prop;
+            }
+
+            h3 {
+              font-family: $ffSpecial;
+              color: $whiteAlmost;
+              font-weight: 400;
+              width: 50%;
+              text-align: center;
+              transition: $transition;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 2em;
+
+  .content-container {
+    height: 60vw;
+    max-height: 500px;
+    width: 100%;
+    position: relative;
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url("../img/wave-footer-bg.svg");
+      background-size: cover;
+      background-position: left;
+      z-index: -1;
+    }
+
+    .link-container {
+      padding-top: 5em;
+      @include flexbox-col;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+
+      .logo-container {
+        .logo {
+          height: 36px;
+          max-height: 120px;
+        }
+      }
+      .link-list {
+        margin-top: $tmParagraphs;
+        ul {
+          @include flexbox-row;
+          gap: 20px;
+
+          li {
+            display: block;
+
+            a {
+              padding: 0.5rem;
+              color: #ababab;
+              font-size: 16px;
+              transition: $transition;
+
+              &:hover {
+                color: $pinkish;
+              }
+            }
+          }
+        }
+      }
+
+      .footer-text {
+        margin-top: $tmSubheadlines;
+
+        p {
+          font-size: 9px;
+          color: rgb(104, 104, 104);
+          font-family: $ffSpecial;
+          font-weight: 400;
+
+          .special {
+            color: $whiteAlmost;
+            font-weight: 700;
+
+            a {
+              color: $whiteAlmost;
+              text-decoration: underline;
+              transition: all 0.3s ease;
+
+              &:hover {
+                color: $pinkish;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  z-index: 99;
+
+  .content-container {
+    .padding-container {
+      padding: 0 2em;
+      min-height: calc(90vh - 8vh);
+
+    //   &::after {
+    //     content: "";
+    //     height: 100%;
+    //     width: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     background: rgba(0, 0, 0, .8);
+    //     z-index: -1;
+    //     backdrop-filter: blur(2px);
+    //   }
+
+      .card {
+        background: $whiteAlmost;
+        height: 50%;
+        box-shadow: -5px 5px 25px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      .left {
+        padding: 2em;
+        transition: $transition;
+        transform: translateX(-1000px);
+
+        .title {
+          h2 {
+            @include headlines;
+          }
+        }
+
+        .tiny-tag {
+          font-family: $ffSpecial;
+          color: $pinkish;
+          margin-top: $tmParagraphs;
+        }
+
+        .paragraphs {
+          margin-top: $tmSubheadlines;
+          @include flexbox-col;
+          gap: 1.5em;
+
+          p {
+            font-family: $ffPrimary;
+            font-size: $fsParagraphs;
+            color: $black;
+
+            .special {
+              font-weight: 600;
+              text-transform: capitalize;
+            }
+          }
+        }
+
+        .skillset-container {
+          margin-top: $tmSubheadlines;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          span {
+            transition: $transition;
+            cursor: text;
+            color: #bcbcbc;
+            font-size: $fsSubheadlines;
+            padding: 0.5rem;
+
+            &:hover {
+              color: $black;
+            }
+          }
+        }
+      }
+
+      .right {
+        background: $black;
+        padding: 2em;
+        transition: $transition;
+        transform: translateX(1000px);
+
+        .title {
+          h2 {
+            @include headlines;
+            color: $whiteAlmost;
+          }
+        }
+
+        .tiny-tag {
+          font-family: $ffSpecial;
+          color: $pinkish;
+          margin-top: $tmParagraphs;
+        }
+
+        form {
+          margin-top: 1em;
+          display: flex;
+          flex-direction: column;
+
+          label {
+            @include paragraphs;
+            color: $whiteAlmost;
+            margin-top: 2rem;
+            position: relative;
+
+            &:nth-child(1)::after,
+            &:nth-child(3)::after {
+              content: "*";
+              font-size: 10px;
+              position: absolute;
+              top: 0;
+              color: $pinkish;
+            }
+          }
+
+          input {
+            margin-top: 1em;
+            height: 30px;
+            background: none;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #505050;
+            color: $whiteAlmost; /* change [input cursor color] by this*/
+            text-shadow: 0px 0px 0px $pinkish; /* change [input font] by this*/
+            -webkit-text-fill-color: transparent;
+            padding: 0 1rem;
+            font-family: $ffPrimary;
+            font-size: 1.2rem;
+
+            &:focus {
+              border-bottom: 1px solid $whiteAlmost;
+            }
+          }
+
+          textarea {
+            height: 80px;
+            margin-top: 1em;
+            padding: 1rem;
+            background: none;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #505050;
+            color: $whiteAlmost; /* change [input cursor color] by this*/
+            text-shadow: 0px 0px 0px $pinkish; /* change [input font] by this*/
+            -webkit-text-fill-color: transparent;
+            font-family: $ffPrimary;
+            font-size: 1.2rem;
+          }
+
+          button {
+            @include buttons;
+            margin-top: $tmButton;
+          }
+        }
+      }
+
+      .right-slide-in {
+        animation: right-slide-anim .5s ease-in-out forwards;
+        animation-delay: .4s;
+      }
+
+      .left-slide-in {
+        animation: left-slide-anim .5s ease-in-out forwards;
+        animation-delay: .2s;
+      }
+    }
+  }
+}
+
+@keyframes left-slide-anim {
+    from {
+        transform: translateX(-1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes right-slide-anim {
+    from {
+        transform: translateX(1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}

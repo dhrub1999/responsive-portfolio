@@ -1,0 +1,990 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 64.5%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  font-display: auto;
+  overflow-x: hidden;
+}
+
+.landing-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.landing-page .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -9;
+  max-height: 100vh;
+}
+
+.landing-page .background .wave-background {
+  height: 100vh;
+  width: auto;
+  z-index: -3;
+}
+
+.landing-page .background .wave-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: rgba(0, 0, 0, 0.8);
+  z-index: -2;
+}
+
+.landing-page .header {
+  position: relative;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.landing-page .header .content-container {
+  width: 100%;
+}
+
+.landing-page .header .content-container .padding-container {
+  padding: 0 2em;
+  width: 100%;
+  height: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.landing-page .header .content-container .padding-container .logo-container .logo-name a {
+  text-decoration: none;
+  color: #7002FD;
+  font-family: "Kalam", cursive;
+  font-size: 1.4rem;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  line-height: 7vh;
+}
+
+.landing-page .header .content-container .padding-container nav ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 2em;
+  gap: 1em;
+  background: rgba(0, 0, 0, 0.8);
+  height: 7vh;
+  width: 100%;
+  -webkit-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateX(-1000px);
+          transform: translateX(-1000px);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.landing-page .header .content-container .padding-container nav ul li a {
+  display: block;
+  color: #FEF7FF;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  padding: 0.3em 0.5em;
+}
+
+.landing-page .header .content-container .padding-container nav ul li a:hover {
+  color: #9E88B2;
+}
+
+.landing-page .header .content-container .padding-container nav ul li:nth-child(3) a {
+  color: #9E88B2;
+}
+
+.landing-page .header .content-container .padding-container nav ul li:nth-child(3) a:hover {
+  color: #7002FD;
+}
+
+.landing-page .header .content-container .padding-container .show-nav ul {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.landing-page .header .content-container .padding-container .hamburger-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  cursor: pointer;
+}
+
+.landing-page .header .content-container .padding-container .hamburger-container div {
+  height: 2px;
+  width: 30px;
+  background: #FEF7FF;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.landing-page .header .content-container .padding-container .hamburger-container .second {
+  width: 20px;
+}
+
+.landing-page .header .content-container .padding-container .cross .first {
+  width: 20px;
+  -webkit-transform: rotate(45deg) translate(3px, 2px);
+          transform: rotate(45deg) translate(3px, 2px);
+}
+
+.landing-page .header .content-container .padding-container .cross .second {
+  -webkit-transform: rotate(-45deg) translate(3px, -2px);
+          transform: rotate(-45deg) translate(3px, -2px);
+}
+
+.landing-page .sticky-nav {
+  position: fixed;
+  background: #9E88B2;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.hero-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hero-container .content-container {
+  height: calc(100vh - 7vh);
+  width: 100%;
+}
+
+.hero-container .content-container .padding-container {
+  padding: 0 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh - 7vh);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-container .content-container .padding-container .left-container .text-container .title h1 {
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  font-size: 4rem;
+  line-height: 5.6rem;
+  text-align: center;
+  color: #FEF7FF;
+  font-weight: 800;
+}
+
+.hero-container .content-container .padding-container .left-container .text-container .title h1 .special {
+  color: #7002FD;
+  text-transform: capitalize;
+}
+
+.hero-container .content-container .padding-container .left-container .text-container .subtitle {
+  margin-top: 2rem;
+}
+
+.hero-container .content-container .padding-container .left-container .text-container .subtitle p {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #9E88B2;
+}
+
+.hero-container .content-container .padding-container .left-container .button-container {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.hero-container .content-container .padding-container .left-container .button-container button {
+  outline: none;
+  border: 1px solid transparent;
+  height: 3.5rem;
+  width: 12rem;
+  border-radius: 5px;
+  background: #7002FD;
+  color: #FEF7FF;
+  font-family: "Kalam", cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  cursor: pointer;
+  background: #FEF7FF;
+  border-radius: 30px;
+}
+
+.hero-container .content-container .padding-container .left-container .button-container button:hover {
+  border: 1px solid #7002FD;
+  background: transparent;
+  color: #7002FD;
+}
+
+.hero-container .content-container .padding-container .left-container .button-container button:hover {
+  border: 1px solid transparent;
+  border-right: 1px solid #FEF7FF;
+  border-left: 1px solid #FEF7FF;
+  -webkit-box-shadow: -2px 2px 8px rgba(0, 0, 1, 0.3);
+          box-shadow: -2px 2px 8px rgba(0, 0, 1, 0.3);
+}
+
+.hero-container .content-container .padding-container .left-container .button-container button a {
+  color: #7002FD;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.hero-container .content-container .padding-container .left-container .button-container button:hover a {
+  color: #FEF7FF;
+}
+
+.hero-container .content-container .padding-container .right-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: -2;
+}
+
+.hero-container .content-container .padding-container .right-container .char-svg-container {
+  position: relative;
+  height: 100%;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.hero-container .content-container .padding-container .right-container .char-svg-container .char-svg {
+  width: 100%;
+  height: 250px;
+}
+
+.hero-container .content-container .padding-container .right-container .overlay-svg-container {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  left: 0;
+}
+
+.hero-container .content-container .padding-container .right-container .overlay-svg-container .overlay-svg {
+  fill: rgba(0, 0, 0, 0.8);
+  width: auto;
+  height: 100%;
+}
+
+.my-works {
+  margin-top: 8em;
+}
+
+.my-works .content-container .padding-container {
+  padding: 0 2em;
+}
+
+.my-works .content-container .padding-container .headline {
+  position: relative;
+}
+
+.my-works .content-container .padding-container .headline h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #7002FD;
+}
+
+.my-works .content-container .padding-container .headline h2::before {
+  content: "CASE STUDIES";
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -59%);
+          transform: translate(-50%, -59%);
+  z-index: -1;
+  font-size: 3rem;
+  color: rgba(255, 192, 203, 0.2);
+  font-family: "Kalam", cursive;
+  height: 100%;
+}
+
+.my-works .content-container .padding-container .project-container .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-img {
+  margin-top: 4em;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-img .project-background-img {
+  width: 100%;
+  max-width: 570px;
+  background: #9E88B2;
+  padding: 1em 1em;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  -webkit-box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.6rem;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-img .project-background-img img {
+  -webkit-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info {
+  margin-top: 2em;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container {
+  text-align: center;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container .project-title h3 {
+  color: #9E88B2;
+  font-size: 1.8rem;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container .project-subtitle {
+  margin-top: 1em;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container .project-subtitle p {
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #1F1926;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container .button {
+  margin-top: 2em;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container .button button {
+  outline: none;
+  border: 1px solid transparent;
+  height: 3.5rem;
+  width: 12rem;
+  border-radius: 5px;
+  background: #7002FD;
+  color: #FEF7FF;
+  font-family: "Kalam", cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  cursor: pointer;
+  height: 3rem;
+  width: 10rem;
+  font-size: 1rem;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container .button button:hover {
+  border: 1px solid #7002FD;
+  background: transparent;
+  color: #7002FD;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container .button button:hover a {
+  color: #7002FD;
+}
+
+.my-works .content-container .padding-container .project-container .project .project-info .text-container .button button a {
+  color: #FEF7FF;
+}
+
+.experiments {
+  margin-top: 8em;
+}
+
+.experiments .content-container .padding-container {
+  padding: 0 2em;
+}
+
+.experiments .content-container .padding-container .headline h2 {
+  text-align: center;
+  font-family: "Kalam", cursive;
+  font-size: 2rem;
+  color: #9E88B2;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment {
+  margin-top: 4em;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card {
+  height: 110vw;
+  max-height: 420px;
+  width: auto;
+  max-width: 300px;
+  background: #1F1926;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card:hover {
+  background: #1f1926d1;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card:hover h3 {
+  color: #1F1926;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card div {
+  height: 60vw;
+  width: 60vw;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
+  -webkit-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card .img-rpg {
+  background: url("../img/Codepen Project 3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card .img-rbg {
+  background: url("../img/Codepen Project 4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card .img-nrc {
+  background: url("../img/Codepen Project 1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card .img-pc {
+  background: url("../img/Codepen Project 2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.experiments .content-container .padding-container .experiment-projects-container .experiment .card h3 {
+  font-family: "Kalam", cursive;
+  color: #FEF7FF;
+  font-weight: 400;
+  width: 50%;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.footer {
+  margin-top: 2em;
+}
+
+.footer .content-container {
+  height: 60vw;
+  max-height: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.footer .content-container .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("../img/wave-footer-bg.svg");
+  background-size: cover;
+  background-position: left;
+  z-index: -1;
+}
+
+.footer .content-container .link-container {
+  padding-top: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.footer .content-container .link-container .logo-container .logo {
+  height: 36px;
+  max-height: 120px;
+}
+
+.footer .content-container .link-container .link-list {
+  margin-top: 1em;
+}
+
+.footer .content-container .link-container .link-list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+}
+
+.footer .content-container .link-container .link-list ul li {
+  display: block;
+}
+
+.footer .content-container .link-container .link-list ul li a {
+  padding: 0.5rem;
+  color: #ababab;
+  font-size: 16px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.footer .content-container .link-container .link-list ul li a:hover {
+  color: #9E88B2;
+}
+
+.footer .content-container .link-container .footer-text {
+  margin-top: 2em;
+}
+
+.footer .content-container .link-container .footer-text p {
+  font-size: 9px;
+  color: #686868;
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+}
+
+.footer .content-container .link-container .footer-text p .special {
+  color: #FEF7FF;
+  font-weight: 700;
+}
+
+.footer .content-container .link-container .footer-text p .special a {
+  color: #FEF7FF;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.footer .content-container .link-container .footer-text p .special a:hover {
+  color: #9E88B2;
+}
+
+.contact {
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  z-index: 99;
+}
+
+.contact .content-container .padding-container {
+  padding: 0 2em;
+  min-height: calc(90vh - 8vh);
+}
+
+.contact .content-container .padding-container .card {
+  background: #FEF7FF;
+  height: 50%;
+  -webkit-box-shadow: -5px 5px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: -5px 5px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.contact .content-container .padding-container .left {
+  padding: 2em;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-transform: translateX(-1000px);
+          transform: translateX(-1000px);
+}
+
+.contact .content-container .padding-container .left .title h2 {
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #7002FD;
+}
+
+.contact .content-container .padding-container .left .tiny-tag {
+  font-family: "Kalam", cursive;
+  color: #9E88B2;
+  margin-top: 1em;
+}
+
+.contact .content-container .padding-container .left .paragraphs {
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5em;
+}
+
+.contact .content-container .padding-container .left .paragraphs p {
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  font-size: 1.4rem;
+  color: #1F1926;
+}
+
+.contact .content-container .padding-container .left .paragraphs p .special {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.contact .content-container .padding-container .left .skillset-container {
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .content-container .padding-container .left .skillset-container span {
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  cursor: text;
+  color: #bcbcbc;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+}
+
+.contact .content-container .padding-container .left .skillset-container span:hover {
+  color: #1F1926;
+}
+
+.contact .content-container .padding-container .right {
+  background: #1F1926;
+  padding: 2em;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-transform: translateX(1000px);
+          transform: translateX(1000px);
+}
+
+.contact .content-container .padding-container .right .title h2 {
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #7002FD;
+  color: #FEF7FF;
+}
+
+.contact .content-container .padding-container .right .tiny-tag {
+  font-family: "Kalam", cursive;
+  color: #9E88B2;
+  margin-top: 1em;
+}
+
+.contact .content-container .padding-container .right form {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact .content-container .padding-container .right form label {
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #1F1926;
+  letter-spacing: 1px;
+  color: #FEF7FF;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.contact .content-container .padding-container .right form label:nth-child(1)::after, .contact .content-container .padding-container .right form label:nth-child(3)::after {
+  content: "*";
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  color: #9E88B2;
+}
+
+.contact .content-container .padding-container .right form input {
+  margin-top: 1em;
+  height: 30px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #505050;
+  color: #FEF7FF;
+  /* change [input cursor color] by this*/
+  text-shadow: 0px 0px 0px #9E88B2;
+  /* change [input font] by this*/
+  -webkit-text-fill-color: transparent;
+  padding: 0 1rem;
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  font-size: 1.2rem;
+}
+
+.contact .content-container .padding-container .right form input:focus {
+  border-bottom: 1px solid #FEF7FF;
+}
+
+.contact .content-container .padding-container .right form textarea {
+  height: 80px;
+  margin-top: 1em;
+  padding: 1rem;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #505050;
+  color: #FEF7FF;
+  /* change [input cursor color] by this*/
+  text-shadow: 0px 0px 0px #9E88B2;
+  /* change [input font] by this*/
+  -webkit-text-fill-color: transparent;
+  font-family: "Open Sans", Arial, Helvetica, sans serif;
+  font-size: 1.2rem;
+}
+
+.contact .content-container .padding-container .right form button {
+  outline: none;
+  border: 1px solid transparent;
+  height: 3.5rem;
+  width: 12rem;
+  border-radius: 5px;
+  background: #7002FD;
+  color: #FEF7FF;
+  font-family: "Kalam", cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  cursor: pointer;
+  margin-top: 2em;
+}
+
+.contact .content-container .padding-container .right form button:hover {
+  border: 1px solid #7002FD;
+  background: transparent;
+  color: #7002FD;
+}
+
+.contact .content-container .padding-container .right-slide-in {
+  -webkit-animation: right-slide-anim .5s ease-in-out forwards;
+          animation: right-slide-anim .5s ease-in-out forwards;
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+.contact .content-container .padding-container .left-slide-in {
+  -webkit-animation: left-slide-anim .5s ease-in-out forwards;
+          animation: left-slide-anim .5s ease-in-out forwards;
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+@-webkit-keyframes left-slide-anim {
+  from {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes left-slide-anim {
+  from {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes right-slide-anim {
+  from {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes right-slide-anim {
+  from {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
